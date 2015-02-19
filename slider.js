@@ -10,6 +10,9 @@ angular.module('ui.bootstrap-slider', [])
                 min: "=",
                 step: "=",
                 value: "=",
+                ticks: "=",
+                ticksLabels: "=",
+                ticksSnapBounds: "=",
                 ngModel: '=',
                 range:'=',
                 sliderid: '=',
@@ -57,6 +60,11 @@ angular.module('ui.bootstrap-slider', [])
                     setBooleanOption('enabled', attrs.enabled, true);
                     setBooleanOption('naturalarrowkeys', attrs.naturalarrowkeys, false);
                     setBooleanOption('reversed', attrs.reversed, false);
+
+                    setOption('ticks', $scope.ticks, []);
+                    setOption('ticks_labels', $scope.ticksLabels, []);
+                    setOption('ticks_snap_bounds', $scope.ticksSnapBounds, 0);
+
 
                     setBooleanOption('range', $scope.range, false);
                     if( options.range ) {
